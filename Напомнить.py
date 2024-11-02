@@ -21,7 +21,8 @@ def set(mb=None):
             print(dt)
             t = dt.timestamp()
             print(t)
-            label.config(text=f"Напоминание на {hour:02}:{minute:02}")
+            text = sd.askstring("Текст напоминания", "Введите текст напоминания")
+            label.config(text=f"Напоминание на {hour:02}:{minute:02} с текстом {text}")
         except Exception as e:
             mb.showerror("Ошибка!", f"Произошла ошибка {e}")
 
